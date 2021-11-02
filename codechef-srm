@@ -1,0 +1,259 @@
+1)
+
+#include <stdio.h>
+int main()
+{
+int number, LD;
+printf(" Enter a number");//Error 4589 (No declaration of a variable)
+scanf("%d", &number);
+LD = number / 10;
+printf(" \n The Last Digit of a Given Number %d = %d", number, LD);
+return 0;
+}
+
+2)
+
+int sumcal(int len, int* arr, int value)
+{
+int sum = 0;
+for(int i =0 ; i< len; i++ )// i<len not len-1
+{
+if(arr[i]%value == 0)
+sum =+ arr[i];
+}
+return sum;
+}
+
+3)
+
+#include <stdio.h>
+int main ()
+{
+  for (int i = 1; i <= 4; i++)// i++
+    {
+      for (int j = 1; j <= 4; j++)
+	{
+	  if (i != j)
+	    {
+	      printf ("*");
+	    }
+	  else
+	    {
+	      printf (" ");
+	    }
+	}
+      printf ("\n");
+    }
+  return 0;
+}
+
+4)
+
+#include <stdio.h>
+void main() {
+char a='A';
+a>10?printf("Yes");printf("No");// No ; in between terneary operators only :
+// No return 0 in void return type
+}
+
+5)
+
+#include <iostream>
+using namespace std;
+int main() {
+int o,i, s; // no ; between variables only ,
+for(o=5; o>=1; o--)
+{
+for(s=1; s<=5-o; s++)// no semicolon declaration in for loop(s=1;s<=5-o;s++)
+cout<<" ";
+for (i=1 i<=o i++){
+cout>>"*";}
+cout<<endl;
+}
+return 0;    //No return 0 type specified 
+}   // Extra brace }
+
+6)
+
+z=int(input("Enter a number: ")) // wrong input z=int(“Enter a number:”)
+for x in range(0,9): // No variable x specified
+ if z == x: // = not ==
+    print("They are equal")
+ else:
+    print("They are not equal") //No braces 
+
+7)
+
+#include <iostream>
+class test{
+public:
+int my_variable; // By default private declaration in class hence public declaration must be made in order to access it
+}
+int main() {
+test code_chef;
+cin>>code_chef.my_variable;
+if(code_chef.my_variable%2==0){
+cout<<"Even";
+}
+else{
+cout<<"odd";// No double quotes " "
+}
+return 0;
+}
+
+8) 
+
+#include<iostream>
+using namespace std; // ; missing
+void printSums(int N)
+{
+int start=1, end=(N+1)/2;
+while (start<end)
+{
+int sum=0;
+for (int i=start;i<=end;i++)
+{
+sum=+i;
+if (sum == N)
+{
+for (j=start,j<=i,j++) // ; missing, I not declared only i
+cout<<j<<" ";
+cout<<"/n";
+break;
+}
+if (sum>N)
+break; // ; missing
+}
+sum=0;
+start++;
+}
+}
+int main()
+{
+int n;
+cin>>n;
+printSums(n); // printSums(n)
+return 0;
+}
+
+9)
+
+#include <iostream>
+using namespace std;
+int main() {
+int length;// ; missing
+cout<<"enter the length of the array"<<endl; // " missing
+cin>>length;
+int array[length];// [ instead of (
+for(int i=0;i<length;i++){
+cin>>array[i];
+}
+int min=array[0],max=array[0]; // , istead of ;
+for(int i=1;i<length;i++){ 
+if(array[i]>max)
+max = array[i];
+else if(array[i]<min) // < instead of <<
+min = array[i];
+}
+cout<< min<<" "<<max;
+return 0; // return 0 
+}
+
+10)
+
+#include <stdio.h>
+#include <string.h> // #include <string.h>
+int main() // int main()
+{
+int t,i,diff_count;
+scanf("%d";&t); // ; missing
+char s[100001]; // ; instead of ,
+while(t--){ // t-- instead of t+-
+diff_count=0;
+scanf("%s",s);
+for(int i=0;i<strlen(s)-1;i++){
+if(s[i]===s[i+1])diff_count++;
+}
+printf("%d\n",diff_count);
+return 0;
+}
+
+                                                                         TASK 2 
+                                                                         
+1)
+
+
+
+2)
+
+#include <iostream>
+
+using namespace std;
+void insertionSort(int arr[],int n){
+    int i,j,temp;
+    for(i=1;i<n;i++){
+        temp=arr[i];
+        j=i-1;
+        while(j>=0 && arr[j]>temp){
+            arr[j+1]=arr[j];
+            j=j-1;
+        }
+        arr[j+1]=key;
+    }
+}
+int main()
+{
+    int n,k;
+    cout<<"Size of array=";
+    cin>>n;
+    int arr[n];
+    cout<<"Kth element=";
+    cin>>k;
+    for(int i=0;i<n;i++) cin>>arr[i];
+    insertionSort(arr,n);
+    cout<<arr[k-1];
+    return 0;
+}
+
+3)
+
+#include <stdio.h>
+
+int main()
+{
+    int num1=65,num2=99;
+    for(int i=0;i<13;i++){
+        if(i%2==0){
+            printf("%c\n",num1);
+            num1+=4;
+        }
+        else{
+            printf("%c\n",num2);
+            num2+=4;
+        }
+    }
+    return 0;
+}
+
+4)
+
+#include <iostream>
+#include<math.h>
+using namespace std;
+int main()
+{
+    int n,j,k,ctr1=0,num,rem,l;
+    cin>>n;
+    j= n*n;
+    k=n;
+    while(k!=0){
+        k/=10;
+        ctr1++;
+    }
+    l=int(pow(10,ctr1));
+    if((j/l)+(j%l)==n) cout<<"Chef Number";
+    else cout<<"Not Chef Number";
+    return 0;
+}
+
+
